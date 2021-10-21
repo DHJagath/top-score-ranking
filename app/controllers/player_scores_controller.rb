@@ -72,7 +72,7 @@ class PlayerScoresController < ApplicationController
   # GET /player_scores/avascore
   def avascore
     @player_score = PlayerScore.where(playername: params[:playername]).average(:score).to_i 
-    render json: @player_score
+    render json:{avascore: @player_score} 
   end
 
   # POST /player_scores
